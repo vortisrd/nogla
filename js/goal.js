@@ -1,4 +1,4 @@
-const goal = 20;
+const goal = 10000;
 let confettiPopped = false;
 
 const streamerBotClient = new StreamerbotClient({
