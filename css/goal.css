@@ -1,0 +1,140 @@
+/* Basic reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    transition: all linear 300ms;
+}
+
+/* Full-page container styling */
+html {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Geist", sans-serif;
+    scroll-behavior: smooth;
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+/* NOGLA MILESTONE GOAL */
+
+#hidden-info {
+    display: none;
+}
+
+#nogla-sub-goals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #FFF;
+    background: linear-gradient(180deg,rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
+
+    padding: 15px 10px;
+}
+
+#nogla-sub-goals .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#nogla-sub-goals .wrapper .goal {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    width: 180px;
+
+    background: rgba(0,0,0,0.4);
+    padding: 5px 10px;
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    text-shadow: 0px 2px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 0px rgba(0,0,0,0.2);
+}
+
+#nogla-sub-goals .wrapper .goal .label {
+    position: relative;
+    z-index: 1;
+    width: 120px;
+}
+
+#nogla-sub-goals .wrapper .goal .milestone {
+    position: relative;
+    width: 40px;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+#nogla-sub-goals .wrapper .goal .milestone .base {
+    position: relative;
+}
+
+
+#nogla-sub-goals .wrapper .goal .milestone .mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #FFF;
+}
+
+
+#nogla-sub-goals .wrapper .goal::before {
+    content: '';
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: var(--progress-width);
+    height: 100%;
+
+    background: linear-gradient(180deg,rgba(0,166,64,0.75) 0%, rgba(0,221,84,0.75) 100%);;
+
+    border-radius: 10px;
+
+    transition: all ease-in-out 300ms;
+}
+
+
+
+
+#nogla-sub-goals .wrapper .goal.incomplete .milestone {
+    color: #07ec61;
+}
+
+
+
+
+
+
+#nogla-sub-goals .wrapper .goal.completing .milestone {
+    color: #FFF;
+}
+
+
+
+#nogla-sub-goals .wrapper .goal.completed::before {
+    width: 100%;
+}
+
+#nogla-sub-goals .wrapper .goal.completed .milestone {
+    color: #FFF;
+}
